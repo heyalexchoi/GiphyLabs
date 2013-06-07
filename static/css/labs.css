@@ -38,15 +38,16 @@ a:hover {
 .apps_list {
 	float:left;
 	width:321px;
+	margin-bottom:50px;
 }
 
 .apps_list ul {
 	list-style-type:none;
-
+	overflow:auto;
 }
 
 .apps_list li h3 {
-	font-size:34px;
+	font-size:24px;
 	font-weight:bold;
 	line-height: 1.3em;
 }
