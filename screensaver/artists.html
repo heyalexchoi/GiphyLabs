@@ -25,7 +25,10 @@
 <body>
 
 <div class="artists_container">
-	<img src="http://media.giphy.com/media/zSXSDkwaLwgp2/original.gif" border="0" />
+  <div class="promo_gif_box">
+    <!-- <img class="promo_gif_img" src="http://media.giphy.com/media/zSXSDkwaLwgp2/original.gif" border="0" /> -->
+  </div>
+	
 	<h1>Giphy Screensavers</h1>
 	<p>Enjoy Giphy GIFs on your desktop with our <a href="/screensaver/GiphySaver.saver.zip">Giphy Screensaver</a>, OSX 10.8 only. 
 		Or enjoy one of the Giphy GIF artist themed screensavers below.</p>
@@ -123,16 +126,72 @@
 
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <script type="text/javascript">
-	$(".thumbnail").hover(function(e) {
-		var $this = $(this).find("img");
-		var src = $this.attr("src");
-		$this.attr("src", src.replace('200_s.gif', '200.gif'))
-	}, function(e) {
-		var $this = $(this).find("img");		
-		var src = $this.attr("src");
-		$this.attr("src", src.replace('200.gif', '200_s.gif'))
-	})
+
+function add_thumbhover() {
+  $(".thumbnail").hover(function(e) {
+    var $this = $(this).find("img");
+    var src = $this.attr("src");
+    $this.attr("src", src.replace('200_s.gif', '200.gif'))
+  }, function(e) {
+    var $this = $(this).find("img");    
+    var src = $this.attr("src");
+    $this.attr("src", src.replace('200.gif', '200_s.gif'))
+  });  
+}
+
+function carosel() {
+  var data = [{
+    name:"frank macchia",
+    href:"FrankMacchiaGiphySaver.saver.zip",
+    src:"http://media.giphy.com/media/zSXSDkwaLwgp2/original.gif"
+  },{
+    name:"fashgif",
+    href:"FashGifGiphySaver.saver.zip",
+    src:"http://media2.giphy.com/media/7HjICepIC3UgU/original.gif"
+  },{
+    name:"oktotally",
+    href:"OktotallyGiphySaver.saver.zip",
+    src:"http://media2.giphy.com/media/11EpXR36El6jU4/original.gif"
+  },{
+    name:"scorpion dagger",
+    href:"ScorpionDaggerGiphySaver.saver.zip",
+    src:"http://media1.giphy.com/media/jbMJDWJrRd1Kg/original.gif"
+  },{
+    name:"declan ackroyd",
+    href:"DeclanAckroydGiphySaver.saver.zip",    
+    src:"http://media2.giphy.com/media/69WCAJwWKp2HS/original.gif"
+  },{
+    name:"mrdiv",
+    href:"MrDivGiphySaver.saver.zip",
+    src:"http://media1.giphy.com/media/11UMYzdwjIbLjy/original.gif"
+  },{
+    name:"pasquale",
+    href:"PasqualeGiphySaver.saver.zip",    
+    src:"http://media0.giphy.com/media/DWlXW6ehVx1S0/original.gif"
+  },{
+    name:"gustavo",
+    href:"GustavoGiphySaver.saver.zip",    
+    src:"http://media2.giphy.com/media/dWoc8WArJym5i/giphy.gif"
+  }];
+
+  /**
+    1. on page load, selct a rand gif
+  */
+
+  var rand = Math.floor(Math.random() * data.length);
+  var item = data[rand];
+  $(".promo_gif_box").html('<img src="'+ item.src +'" border="0" />')
+        .after('<div class="attribution artist">' + item.name + '</div>')
+        .bind("click", function(e) {
+          document.location = item.href
+        });
+}
+
+add_thumbhover();
+carosel();
+
 </script>
 
 <script type="text/javascript">

@@ -113,6 +113,16 @@ margin-right:5px
 
 }
 
+
+.promo_gif_box {
+	width:500px;
+	height:300px;
+	overflow:hidden;
+	cursor:pointer;
+}
+.promo_gif_box img {
+	max-width:500px;
+}
 .artists_container h1 {
 	font-size:36px;
 	line-height:1.3em;
@@ -140,4 +150,10 @@ margin-right:5px
 .footer_logo_link {
 	float:left;
 	margin-right:10px;
+}
+
+.attribution {
+	/*text-align: right;*/
+	clear:both;
+	float:none;
 }
