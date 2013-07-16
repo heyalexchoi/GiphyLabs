@@ -28,6 +28,7 @@ if (!(window._gaq === undefined || window.jQuery === undefined)) {
 		$(function () {
 
 			var fileTypes = '\\.(' +
+                    '7z' + 
 					'dmg|exe|' +
 					'rar|zip|' +
 					'pdf|txt|' +
